@@ -1,0 +1,40 @@
+<!--pages/user/user.wxml-->
+<l-card 
+    l-class="header"
+    type="primary"
+    plaintext="{{true}}" >
+    <l-avatar l-class="avatar" open-data="{{['userAvatarUrl', 'userNickName']}}" />
+</l-card>
+
+<l-list 
+    l-class="list" 
+    icon="success" 
+    title="查看我的植物地图" 
+    is-link 
+    link-type="navigateTo" 
+    url="" />
+
+<l-list 
+    l-class="list" 
+    icon="success" 
+    title="客服" 
+    desc="客服在线时间为 23:30 - 次日7:00"
+    is-link 
+    link-type="navigateTo" 
+    url="" />
+
+<l-list 
+    l-class="list" 
+    icon="success" 
+    title="关于我们" 
+    is-link 
+    link-type="navigateTo" 
+    url="" />
+
+<l-list 
+    l-class="list" 
+    icon="success" 
+    title="用户协议" 
+    is-link 
+    link-type="navigateTo" 
+    url="" />

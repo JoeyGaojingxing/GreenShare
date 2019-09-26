@@ -1,0 +1,21 @@
+<!--pages/logs/logs.wxml-->
+<l-card 
+    type="primary" 
+    image="/static/demo.jpg"
+    title="这里是标题"
+    describe="这里是描述">
+     <!-- 此处为content -->
+        <view class="content">
+        这是一个植物速记案例。这是一个植物速记案例。这是一个植物速记案例。这是一个植物速记案例。这是一个植物速记案例。这是一个植物速记案例。
+        </view>
+    </l-card>
+
+<l-card 
+    type="cover" 
+    image="/static/demo.jpg"
+    title="这里是标题"
+    describe="这里是描述">
+     <!-- 此处为content -->
+        <view class="content">
+        这是一个路径记录案例。这是一个路径记录案例。这是一个路径记录案例。这是一个路径记录案例。这是一个路径记录案例。这是一个路径记录案例。        </view>
+    </l-card>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#eeeeee",
+  "navigationBarTitleText": "发布",
+  "backgroundTextStyle": "light"
+}

@@ -1,0 +1,61 @@
+<!--pages/publish/publish.wxml-->
+<l-image-picker 
+  temp-file-paths="{{image}}" 
+  count="1" 
+  source-type="camera" 
+  l-class="image-picker" 
+  bind:linchange="onChangeImage" 
+  bind:linremove="onRemoveImage"/>
+
+<l-input 
+  label="标题" 
+  required="{{true}}" 
+  value="{{title}}" 
+  placeholder="请输入标题" 
+  maxlength="16"
+  l-class="title" />
+
+<map 
+  id="map" 
+  scale="14"
+  longitude="{{longitude}}" 
+  latitude="{{latitude}}"  
+  markers="{{markers}}" 
+  bindtap="onTapMap"
+  show-location
+  show-compass
+  show-scale
+  style="width: 100%; height: 300px;"
+  class="map" />
+<l-tag size="large" type="reading" plain="{{true}}" >经度{{longitude}} 维度{{latitude}} 海拔{{altitude}} 速度{{speed}} 精度{{accuracy}} 水平精度{{verticalAccuracy}} 垂直精度{{horizontalAccuracy}}</l-tag>
+
+<text class="radio">是否显示在地图上</text>
+<l-radio-group current="{{onMap}}" placement="row">
+  <l-radio key="1">是</l-radio>
+  <l-radio key="0">否</l-radio>
+</l-radio-group>
+
+<text class="radio">是否公开</text>
+<l-radio-group current="{{isPubilc}}" placement="row">
+  <l-radio key="1">是</l-radio>
+  <l-radio key="0">否</l-radio>
+</l-radio-group>
+
+<l-textarea 
+  value="{{remark}}"
+  placeholder="请输入备注"
+  indicator
+  maxlength="140"
+  auto-height 
+  l-class="remark" />
+
+<l-button 
+  size="large"
+  type="default"
+  loading="{{loading}}"
+  shape="circle"
+  icon="success"
+  icon-color="#ddd"
+  l-class="submit">
+  提交
+  </l-button>

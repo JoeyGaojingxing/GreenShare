@@ -1,10 +1,16 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function (res) {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+
+    // 允许获取分享群ID
+    wx.showShareMenu({
+      withShareTicket: true
+    })
+    console.log('app', res)
 
     // 登录
     wx.login({

@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/user/user",
     "pages/publish/publish",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/content/content"
   ],
   "tabBar": {
     "color": "#333",
@@ -53,17 +54,14 @@
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
-    "l-button": "/plugins/lin-ui/button/index", 
+    "l-button": "/plugins/lin-ui/button/index",
     "l-icon": "/plugins/lin-ui/icon/index",
-
     "l-list": "/plugins/lin-ui/list/index",
     "l-card": "/plugins/lin-ui/card/index",
-
     "l-tag": "/plugins/lin-ui/tag/index",
     "l-avatar": "/plugins/lin-ui/avatar/index",
     "l-steps": "/plugins/lin-ui/steps/index",
     "l-step": "/plugins/lin-ui/step/index",
-
     "l-image-picker": "/plugins/lin-ui/image-picker/index",
     "l-input": "/plugins/lin-ui/input/index",
     "l-textarea": "/plugins/lin-ui/textarea/index",
@@ -71,12 +69,10 @@
     "l-radio-group": "/plugins/lin-ui/radio-group/index",
     "l-checkbox": "/plugins/lin-ui/checkbox/index",
     "l-checkbox-group": "/plugins/lin-ui/checkbox-group/index",
-
     "l-dialog": "/plugins/lin-ui/dialog/index",
     "l-toast": "/plugins/lin-ui/dialog/index",
     "l-message": "/plugins/lin-ui/dialog/index",
     "l-action-sheet": "/plugins/lin-ui/action-sheet/index",
-
     "l-search-bar": "/plugins/lin-ui/search-bar/index"
   },
   "permission": {

@@ -22,6 +22,7 @@
   latitude="{{latitude}}"  
   markers="{{markers}}" 
   bindtap="onTapMap"
+  enable-satellite="{{false}}"
   show-location
   show-compass
   show-scale
@@ -29,25 +30,25 @@
   class="map" />
 <l-tag size="large" type="reading" plain="{{true}}" >经度{{longitude}} 维度{{latitude}} 海拔{{altitude}} 速度{{speed}} 精度{{accuracy}} 水平精度{{verticalAccuracy}} 垂直精度{{horizontalAccuracy}}</l-tag>
 
-<text class="radio">是否显示在地图上</text>
+<text class="radio">是否显示在地图上（不显示在生成的绿地图上，点击：什么是绿地图）</text>
 <l-radio-group current="{{onMap}}" placement="row">
   <l-radio key="1">是</l-radio>
   <l-radio key="0">否</l-radio>
 </l-radio-group>
 
-<text class="radio">是否公开</text>
+<text class="radio">是否公开（不公开无法搜索到，但是仍可通过分享链接直接访问）</text>
 <l-radio-group current="{{isPubilc}}" placement="row">
   <l-radio key="1">是</l-radio>
   <l-radio key="0">否</l-radio>
 </l-radio-group>
 
 <l-textarea 
-  value="{{remark}}"
-  placeholder="请输入备注"
+  value="{{content}}"
+  placeholder="请输入分享内容"
   indicator
   maxlength="140"
   auto-height 
-  l-class="remark" />
+  l-class="content" />
 
 <l-button 
   size="large"

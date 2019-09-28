@@ -1,4 +1,6 @@
 <!--pages/user/user.wxml-->
+
+<!-- 个人信息 我的发布 我喜欢的 客服 反馈 关于我们 用户协议 -->
 <l-card 
     l-class="header"
     type="primary"
@@ -19,6 +21,14 @@
     icon="success" 
     title="客服" 
     desc="客服在线时间为 23:30 - 次日7:00"
+    is-link 
+    link-type="navigateTo" 
+    url="" />
+
+<l-list 
+    l-class="list" 
+    icon="success" 
+    title="用户反馈" 
     is-link 
     link-type="navigateTo" 
     url="" />

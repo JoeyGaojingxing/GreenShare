@@ -1,0 +1,7 @@
+<!--pages/userlist/userlist.wxml-->
+<l-avatar open-data="{{['userAvatarUrl', 'userNickName']}}" />
+
+<l-avatar
+    size='120'
+    src="/static/demo.jpg"
+    text="mojerro" />

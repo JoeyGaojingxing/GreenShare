@@ -1,25 +1,35 @@
 <!-- pages/index/index.wxml -->
-<l-card 
-    type="avatar" 
-    l-class="card" 
-    image="/static/demo.jpg" 
-    title="七月在夏天" 
-    describe="18个小时前">
-    <!-- 此处为content -->
-    <view class="avter-content">
-    很简单，豆瓣现在这样就给大家指了一条明路:以后凡是这种国产的风口浪尖的的片子，会涉及到各方背后利益关系的片子...
-    </view>
-    <view class="avter-share-container">
-        <view class="like-container">
-            <l-icon name="like" color="#666" size="28" />
-            <view class="number">160喜欢</view>
+<l-search-bar placeholder="搜索" show-cancel="{{true}}" shape="circle" />
+
+<navigator 
+    url="/pages/content/content?mode=marker" 
+    hover-class="navigator-hover"
+    hover-start-time="0"
+    hover-stay-time="80"
+    bindfail="" >
+    <l-card 
+        type="avatar" 
+        l-class="card" 
+        image="/static/demo.jpg" 
+        title="七月在夏天" 
+        describe="18个小时前">
+        <!-- 此处为content -->
+        <view class="avter-content">
+        很简单，豆瓣现在这样就给大家指了一条明路:以后凡是这种国产的风口浪尖的的片子，会涉及到各方背后利益关系的片子...
         </view>
-        <view class="like-container">
-            <l-icon name="default" color="#666" size="28" />
-            <view class="number">10评论</view>
+        <view class="avter-share-container">
+            <view class="like-container">
+                <l-icon name="like" color="#666" size="28" />
+                <view class="number">160喜欢</view>
+            </view>
+            <view class="like-container">
+                <l-icon name="default" color="#666" size="28" />
+                <view class="number">10评论</view>
+            </view>
         </view>
-    </view>
-    <l-tag shape="circle" bg-color="#f3f3f3" font-color="#3963BC" slot="more" size="large">
-        + 关注
-    </l-tag>
-</l-card>
+        <l-tag shape="circle" bg-color="#f3f3f3" font-color="#3963BC" slot="more" size="large">
+            + 关注
+        </l-tag>
+    </l-card>
+</navigator>
+

@@ -1,50 +1,83 @@
 <!--pages/user/user.wxml-->
+<l-toast
+show="{{currentConf.show}}"
+title="{{currentConf.title}}"
+icon="{{currentConf.icon}}"
+image="{{currentConf.image}}"
+placement="{{currentConf.placement}}"
+duration="{{currentConf.duration}}"
+center="{{currentConf.center}}"
+mask="{{currentConf.mask}}" 
+l-image-class="img" />
 
-<!-- 个人信息 我的发布 我喜欢的 客服 反馈 关于我们 用户协议 -->
-<l-card 
-    l-class="header"
-    type="primary"
-    plaintext="{{true}}" >
-    <l-avatar l-class="avatar" open-data="{{['userAvatarUrl', 'userNickName']}}" />
-</l-card>
+<!-- 个人信息 我的发布 我喜欢的 喜欢我的数量 我关注的人 关注我的人 客服 反馈 关于我们 用户协议 -->
+<navigator 
+    url="/pages/userinfo/userinfo" 
+    hover-class="navigator-hover"
+    hover-start-time="0"
+    hover-stay-time="80"
+    bindfail="" >
+    <l-card 
+        l-class="header"
+        type="primary"
+        plaintext="{{true}}" >
+        <l-avatar l-class="avatar" open-data="{{['userAvatarUrl', 'userNickName']}}" />
+        <l-icon name="edit" />
+    </l-card>
+</navigator>
 
-<l-list 
-    l-class="list" 
-    icon="success" 
-    title="查看我的植物地图" 
-    is-link 
-    link-type="navigateTo" 
-    url="" />
+<l-grid
+    bind:lintap="onTapGrid"
+    l-class="grid"
+    l-class-grid="grid-item"
+    rowNum="3"
+    show-border="true"
+    show-row-border="true"
+    show-col-border="true" >
 
-<l-list 
-    l-class="list" 
-    icon="success" 
-    title="客服" 
-    desc="客服在线时间为 23:30 - 次日7:00"
-    is-link 
-    link-type="navigateTo" 
-    url="" />
+    <l-grid-item key="records" slot="records">
+        <view >333</view>
+        <l-button>我的记录数</l-button> 
+    </l-grid-item>
 
-<l-list 
-    l-class="list" 
-    icon="success" 
-    title="用户反馈" 
-    is-link 
-    link-type="navigateTo" 
-    url="" />
+    <l-grid-item key="length" slot="length">
+        <view >666 m</view>
+        <l-button>我走的路</l-button>
+    </l-grid-item>
 
-<l-list 
-    l-class="list" 
-    icon="success" 
-    title="关于我们" 
-    is-link 
-    link-type="navigateTo" 
-    url="" />
+    <l-grid-item key="liked" slot="liked">
+        <view >999</view>
+        <l-button>收到的赞</l-button>
+    </l-grid-item>
+    
+    <l-grid-item key="contents" slot="contents">
+        <l-icon name="order" />
+        <l-button>我的发布</l-button> 
+    </l-grid-item>
 
-<l-list 
-    l-class="list" 
-    icon="success" 
-    title="用户协议" 
-    is-link 
-    link-type="navigateTo" 
-    url="" />
+    <l-grid-item key="watch" slot="watch">
+        <l-icon name="order" />
+        <l-button>我关注的</l-button>
+    </l-grid-item>
+
+    <l-grid-item key="watched" slot="watched">
+        <l-icon name="order" />
+        <l-button>我的粉丝</l-button>
+    </l-grid-item>
+
+    <l-grid-item key="contact" slot="contact">
+        <l-icon name="order" />
+        <l-button open-type="contact">联系客服</l-button>
+    </l-grid-item>
+
+    <l-grid-item key="callback" slot="callback">
+        <l-icon name="order" />
+        <l-button open-type="feedback">问题反馈</l-button>
+    </l-grid-item>
+
+    <l-grid-item key="about" slot="about">
+        <l-icon name="order" />
+        <l-button>关于我们</l-button>
+    </l-grid-item>
+
+</l-grid>

@@ -7,9 +7,12 @@
 </block>
 
 <block wx:elif="{{mode === 'track'}}">
-<template is="track" data="{{...item}}"></template>
+    <template is="track" data="{{...item}}"></template>
 </block>
 
 <block wx:else> 
     there is something wrong
+</block>
+
+<block class="home">
 </block>

@@ -6,6 +6,7 @@
   l-class="image-picker" 
   bind:linchange="onChangeImage" 
   bind:linremove="onRemoveImage"/>
+<l-tag>tag1</l-tag>
 
 <l-input 
   label="标题" 
@@ -15,6 +16,7 @@
   maxlength="16"
   l-class="title" />
 
+<view >点击地图修正位置</view>
 <map 
   id="map" 
   scale="14"
@@ -23,6 +25,7 @@
   markers="{{markers}}" 
   bindtap="onTapMap"
   enable-satellite="{{false}}"
+  scale="19"
   show-location
   show-compass
   show-scale

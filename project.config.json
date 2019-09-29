@@ -48,39 +48,39 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 0,
 			"list": [
 				{
-					"id": -1,
-					"name": "index",
+					"id": 0,
+					"name": "主页",
 					"pathName": "pages/index/index",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "logs",
+					"id": 1,
+					"name": "二级页面 记录",
 					"pathName": "pages/logs/logs",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "user",
+					"id": 2,
+					"name": "我的",
 					"pathName": "pages/user/user",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "publish",
+					"id": 3,
+					"name": "发布",
 					"pathName": "pages/publish/publish",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "search",
+					"id": 4,
+					"name": "二级页面 搜索",
 					"pathName": "pages/search/search",
 					"query": "",
 					"scene": null

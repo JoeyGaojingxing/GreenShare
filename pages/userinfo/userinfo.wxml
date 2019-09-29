@@ -1,0 +1,4 @@
+<!--pages/userinfo/userinfo.wxml-->
+<!-- 用户名 头像 手机号 姓名 自我介绍 标签 -->
+<text>pages/userinfo/userinfo.wxml</text>
+<l-avatar open-data="{{['userAvatarUrl', 'userNickName']}}" />

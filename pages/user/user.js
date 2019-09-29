@@ -62,5 +62,59 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  onTapGrid (res) {
+    const index = res.detail.index
+    console.log(index)
+
+    if (index===3) {
+      // 我的发布
+      wx.navigateTo({
+        url: '/pages/records/records',
+        success: function(res) {
+          console.log(res, 'success')
+        },
+        fail: function (res) {
+          console.log(res, 'fail')
+        }
+      })
+    } else if (index===4) {
+      // 我的关注
+      wx.navigateTo({
+        url: '/pages/userlist/userlist?mode=follow',
+        success: function(res) {
+          console.log(res, 'success')
+        },
+        fail: function (res) {
+          console.log(res, 'fail')
+        }
+      })
+    }  else if (index===5) {
+      // 我的粉丝
+      wx.navigateTo({
+        url: '/pages/userlist/userlist?mode=fans',
+        success: function(res) {
+          console.log(res, 'success')
+        },
+        fail: function (res) {
+          console.log(res, 'fail')
+        }
+      })
+    }  else if (index===8) {
+      // 关于我们
+      wx.navigateTo({
+        url: '/pages/about/about',
+        success: function(res) {
+          console.log(res, 'success')
+        },
+        fail: function (res) {
+          console.log(res, 'fail')
+        }
+      })
+    }  else {
+      // 其他
+    } 
   }
+
 })

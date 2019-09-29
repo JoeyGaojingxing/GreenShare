@@ -1,4 +1,4 @@
-<template name="marker">
+<template name="track">
     <!-- user(logo id favourite level isValid) share title 植物总数 路线长度 记录用时 image tag content position 评论  -->
     <l-avatar 
         l-class="avatar" 

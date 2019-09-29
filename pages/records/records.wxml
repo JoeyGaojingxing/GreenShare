@@ -1,0 +1,35 @@
+<!--pages/logs/logs.wxml-->
+<navigator 
+    url="/pages/content/content?mode=marker" 
+    hover-class="navigator-hover"
+    hover-start-time="0"
+    hover-stay-time="80"
+    bindfail="" >
+    <l-card 
+        type="primary" 
+        image="/static/demo.jpg"
+        title="这里是标题"
+        describe="这里是描述">
+        <!-- 此处为content -->
+        <view class="content">
+        这是一个植物速记案例。这是一个植物速记案例。这是一个植物速记案例。这是一个植物速记案例。这是一个植物速记案例。这是一个植物速记案例。
+        </view>
+    </l-card>
+</navigator>
+
+<navigator 
+    url="/pages/content/content?mode=track" 
+    hover-class="navigator-hover"
+    hover-start-time="0"
+    hover-stay-time="80"
+    bindfail="" >
+    <l-card 
+        type="cover" 
+        image="/static/demo.jpg"
+        title="这里是标题"
+        describe="这里是描述">
+        <!-- 此处为content -->
+        <view class="content">
+        这是一个路径记录案例。这是一个路径记录案例。这是一个路径记录案例。这是一个路径记录案例。这是一个路径记录案例。这是一个路径记录案例。        </view>
+    </l-card>
+</navigator>

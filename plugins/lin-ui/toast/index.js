@@ -85,7 +85,7 @@ Component({
   methods: {
     initToast() {
       wx.lin = wx.lin || {};
-      wx.lin.showToast = (options = {}) => {
+      wx.lin.showToast = (options) => {
         const {
           title = '',
           icon = '',

@@ -66,7 +66,8 @@
     "l-action-sheet": "/plugins/lin-ui/action-sheet/index",
     "l-search-bar": "/plugins/lin-ui/search-bar/index",
     "l-grid": "/plugins/lin-ui/grid/index",
-    "l-grid-item": "/plugins/lin-ui/grid-item/index"
+    "l-grid-item": "/plugins/lin-ui/grid-item/index",
+    "l-popup": "/plugins/lin-ui/popup/index"
   },
   "permission": {
     "scope.userLocation": {

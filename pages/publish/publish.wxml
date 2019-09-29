@@ -1,4 +1,6 @@
 <!--pages/publish/publish.wxml-->
+
+
 <l-image-picker 
   temp-file-paths="{{image}}" 
   count="1" 
@@ -63,3 +65,15 @@
   l-class="submit">
   提交
   </l-button>
+
+
+<l-popup 
+  show="{{showPop}}"
+  animation="show"
+  content-align="center"
+  z-index="99"
+  locked="{{true}}" >
+  如果要使用此功能，请允许 “使用我的地理位置”
+  <l-button bind:opensetting="onTapOpen" open-type="openSetting" >打开权限</l-button>
+  <l-button bind:lintap	="onTapCancel" >取消</l-button>
+</l-popup>

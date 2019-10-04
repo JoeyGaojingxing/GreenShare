@@ -64,6 +64,16 @@ Page({
 
   },
 
+  getUserInfo (res) {
+    const userInfo = res.detail.userInfo
+    // cloudID encryptedData iv rawData signature userInfo
+    console.log(res.detail.userInfo)
+    console.log(res)
+    if (userInfo === undefined) {
+      wx.navigateBack()
+    }
+  },
+
   onTapGrid (res) {
     const index = res.detail.index
     console.log(index)

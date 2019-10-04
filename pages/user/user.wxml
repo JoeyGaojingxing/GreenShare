@@ -23,7 +23,7 @@ l-image-class="img" />
         plaintext="{{true}}" >
         <l-avatar l-class="avatar" open-data="{{['userAvatarUrl', 'userNickName']}}" />
         <l-icon name="edit" />
-        <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">asdf</button>
+        <button open-type="getUserInfo" bind:getuserinfo="getUserInfo">asdf</button>
     </l-card>
 </navigator>
 

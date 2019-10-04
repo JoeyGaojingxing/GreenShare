@@ -28,13 +28,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
     const _this = this
     wx.getSetting({
       success(res) {
@@ -52,6 +45,35 @@ Page({
           })
         } else {
           _this.getLocation()
+        }
+      },
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    const _this = this
+    wx.getSetting({
+      success(res) {
+        console.log("userInfo", res)
+        if (!res.authSetting['scope.userInfo']) {
+          
+        }
+
+        if (!res.authSetting['scope.userLocation']) {
+          wx.authorize({
+            scope: 'scope.userLocation',
+            // 用户已经同意小程序使用获取地理位置的功能，后续调用 wx.getLocation & wx.chooseLocation 接口不会弹窗询问
+            success () {
+              _this.getLocation()
+            },
+            // 用户没同意小程序权限回调函数
+            fail () {
+              _this.showMessage()
+            },
+          })
         }
       }
     })
@@ -144,6 +166,7 @@ Page({
     const userLocation = res.detail.authSetting["scope.userLocation"]
     if (userLocation===true) {
       _this.hideMessage()
+      _this.getLocation()
     }
   },
   onTapCancel () {

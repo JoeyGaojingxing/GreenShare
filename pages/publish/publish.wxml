@@ -1,79 +1,79 @@
 <!--pages/publish/publish.wxml-->
+<view class='root'>
+  <l-image-picker 
+    temp-file-paths="{{image}}" 
+    count="1" 
+    source-type="camera" 
+    l-class="image-picker" 
+    bind:linchange="onChangeImage" 
+    bind:linremove="onRemoveImage"/>
+  <l-tag>tag1</l-tag>
+
+  <l-input 
+    label="标题" 
+    required="{{true}}" 
+    value="{{title}}" 
+    placeholder="请输入标题" 
+    maxlength="16"
+    l-class="title" />
+
+  <view >点击地图修正位置</view>
+  <map 
+    id="map" 
+    scale="14"
+    longitude="{{longitude}}" 
+    latitude="{{latitude}}"  
+    markers="{{markers}}" 
+    bindtap="onTapMap"
+    enable-satellite="{{false}}"
+    scale="19"
+    show-location
+    show-compass
+    show-scale
+    style="width: 100%; height: 300px;"
+    class="map" />
+  <l-tag size="large" type="reading" plain="{{true}}" >经度{{longitude}} 维度{{latitude}} 海拔{{altitude}} 速度{{speed}} 精度{{accuracy}} 水平精度{{verticalAccuracy}} 垂直精度{{horizontalAccuracy}}</l-tag>
+
+  <text class="radio">是否显示在地图上（不显示在生成的绿地图上，点击：什么是绿地图）</text>
+  <l-radio-group current="{{onMap}}" placement="row">
+    <l-radio key="1">是</l-radio>
+    <l-radio key="0">否</l-radio>
+  </l-radio-group>
+
+  <text class="radio">是否公开（不公开无法搜索到，但是仍可通过分享链接直接访问）</text>
+  <l-radio-group current="{{isPubilc}}" placement="row">
+    <l-radio key="1">是</l-radio>
+    <l-radio key="0">否</l-radio>
+  </l-radio-group>
+
+  <l-textarea 
+    value="{{content}}"
+    placeholder="请输入分享内容"
+    indicator
+    maxlength="140"
+    auto-height 
+    l-class="content" />
+
+  <l-button 
+    size="large"
+    type="default"
+    loading="{{loading}}"
+    shape="circle"
+    icon="success"
+    icon-color="#ddd"
+    l-class="submit">
+    提交
+    </l-button>
 
 
-<l-image-picker 
-  temp-file-paths="{{image}}" 
-  count="1" 
-  source-type="camera" 
-  l-class="image-picker" 
-  bind:linchange="onChangeImage" 
-  bind:linremove="onRemoveImage"/>
-<l-tag>tag1</l-tag>
-
-<l-input 
-  label="标题" 
-  required="{{true}}" 
-  value="{{title}}" 
-  placeholder="请输入标题" 
-  maxlength="16"
-  l-class="title" />
-
-<view >点击地图修正位置</view>
-<map 
-  id="map" 
-  scale="14"
-  longitude="{{longitude}}" 
-  latitude="{{latitude}}"  
-  markers="{{markers}}" 
-  bindtap="onTapMap"
-  enable-satellite="{{false}}"
-  scale="19"
-  show-location
-  show-compass
-  show-scale
-  style="width: 100%; height: 300px;"
-  class="map" />
-<l-tag size="large" type="reading" plain="{{true}}" >经度{{longitude}} 维度{{latitude}} 海拔{{altitude}} 速度{{speed}} 精度{{accuracy}} 水平精度{{verticalAccuracy}} 垂直精度{{horizontalAccuracy}}</l-tag>
-
-<text class="radio">是否显示在地图上（不显示在生成的绿地图上，点击：什么是绿地图）</text>
-<l-radio-group current="{{onMap}}" placement="row">
-  <l-radio key="1">是</l-radio>
-  <l-radio key="0">否</l-radio>
-</l-radio-group>
-
-<text class="radio">是否公开（不公开无法搜索到，但是仍可通过分享链接直接访问）</text>
-<l-radio-group current="{{isPubilc}}" placement="row">
-  <l-radio key="1">是</l-radio>
-  <l-radio key="0">否</l-radio>
-</l-radio-group>
-
-<l-textarea 
-  value="{{content}}"
-  placeholder="请输入分享内容"
-  indicator
-  maxlength="140"
-  auto-height 
-  l-class="content" />
-
-<l-button 
-  size="large"
-  type="default"
-  loading="{{loading}}"
-  shape="circle"
-  icon="success"
-  icon-color="#ddd"
-  l-class="submit">
-  提交
-  </l-button>
-
-
-<l-popup 
-  show="{{showPop}}"
-  animation="show"
-  content-align="center"
-  z-index="99"
-  locked="{{true}}" >
-  如果要使用此功能，请允许 “使用我的地理位置”
-  <l-button bind:opensetting="onTapOpen" open-type="openSetting" >打开权限</l-button>
-  <l-button bind:lintap	="onTapCancel" >取消</l-button>
-</l-popup>
+  <l-popup 
+    show="{{showPop}}"
+    animation="show"
+    content-align="center"
+    z-index="99"
+    locked="{{true}}" >
+    如果要使用此功能，请允许 “使用我的地理位置”
+    <l-button bind:opensetting="onTapOpen" open-type="openSetting" >打开权限</l-button>
+    <l-button bind:lintap	="onTapCancel" >取消</l-button>
+  </l-popup>
+</view>

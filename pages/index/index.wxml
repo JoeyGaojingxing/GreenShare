@@ -1,35 +1,52 @@
 <!-- pages/index/index.wxml -->
-<l-search-bar placeholder="搜索" show-cancel="{{true}}" shape="circle" />
+<l-search-bar 
+    placeholder="搜索" 
+    show-cancel="{{true}}" 
+    shape="circle"
+    l-class="search-bar"
+    l-container-class="search-container"
+    l-input-class="input"
+    l-cancel-class='cancel'
+    l-placeholder-class='placeholder' />
 
-<navigator 
-    url="/pages/content/content?mode=marker" 
-    hover-class="navigator-hover"
-    hover-start-time="0"
-    hover-stay-time="80"
-    bindfail="" >
+<view wx:for="{{articles}}" class="contents">
     <l-card 
         type="avatar" 
         l-class="card" 
+        l-img-class="card-img"
+        l-title-class="card-title"
         image="/static/demo.jpg" 
         title="七月在夏天" 
         describe="18个小时前">
         <!-- 此处为content -->
-        <view class="avter-content">
+        <view class="content" bind:tap='onTapContent'>
         很简单，豆瓣现在这样就给大家指了一条明路:以后凡是这种国产的风口浪尖的的片子，会涉及到各方背后利益关系的片子...
         </view>
-        <view class="avter-share-container">
-            <view class="like-container">
-                <l-icon name="like" color="#666" size="28" />
+        <view class="info">
+            <view class="like" bind:tap="onTapLike">
+                <l-icon name="like" color="#666" size="28" l-class="icon" />
                 <view class="number">160喜欢</view>
             </view>
-            <view class="like-container">
-                <l-icon name="default" color="#666" size="28" />
+            <view class="like" bind:tap="onTapComment">
+                <l-icon name="comment" color="#666" size="28" l-class="icon" />
                 <view class="number">10评论</view>
             </view>
+            <view class="like" bind:tap="onTapShare">
+                <l-icon name="share" color="#666" size="28" l-class="icon" />
+                <view class="number">分享</view>
+            </view>
         </view>
-        <l-tag shape="circle" bg-color="#f3f3f3" font-color="#3963BC" slot="more" size="large">
+        <l-tag 
+            shape="circle" 
+            bg-color="#f3f3f3" 
+            font-color="#3963BC" 
+            slot="more" 
+            size="large"
+            bind:lintap='onTapFollow'
+            l-class="tag" >
             + 关注
         </l-tag>
     </l-card>
-</navigator>
+</view>
+
 

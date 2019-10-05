@@ -1,4 +1,1 @@
-/* pages/publish/publish.wxss */
-.image-picker {
-  justify-content: center;
-}
+.root{display:flex;flex-direction:column;justify-content:center}.root .title{display:flex}.root .image-picker{display:flex}.root .map{width:600rpx;height:600rpx}

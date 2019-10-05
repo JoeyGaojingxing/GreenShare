@@ -5,14 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    articles: [1, 2, 3],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getArticles('Beijing')
   },
 
   /**
@@ -62,5 +62,46 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  getArticles: function (city) {
+    const _this = this
+    const urlList = require('../../utils/url.js');
+    // 获取文章列表
+    const object = {
+      //TODO(mojerro):
+      data: { city },
+      success: res => {
+        const data = res.data
+        const statusCode = res.statusCode
+        const header = res.header
+
+        _this.setData({
+          articles: data
+        })
+      },
+      fail: () => {}
+    }
+    wx.request({object})
+  },
+
+  onTapLike: function () {
+    
+  },
+
+  onTapComment: function () {
+
+  },
+
+  onTapShare: function () {
+    
+  },
+
+  onTapFollow: function () {
+    console.log("onTapFollow")
+  },
+
+  onTapContent: function () {
+    console.log('onTapContent')
   }
 })

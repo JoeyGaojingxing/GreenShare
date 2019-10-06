@@ -17,7 +17,7 @@
     maxlength="16"
     l-class="title" />
 
-  <view >点击地图修正位置</view>
+  <view class="tip">点击地图修正位置</view>
   <map 
     id="map" 
     scale="14"
@@ -32,19 +32,30 @@
     show-scale
     style="width: 100%; height: 300px;"
     class="map" />
-  <l-tag size="large" type="reading" plain="{{true}}" >经度{{longitude}} 维度{{latitude}} 海拔{{altitude}} 速度{{speed}} 精度{{accuracy}} 水平精度{{verticalAccuracy}} 垂直精度{{horizontalAccuracy}}</l-tag>
+  <l-tag 
+    size="large" 
+    type="reading" 
+    plain="{{true}}"
+    l-class="map-info" >
+    经度{{longitude}} 维度{{latitude}} 海拔{{altitude}} 速度{{speed}} 
+    精度{{accuracy}} 水平精度{{verticalAccuracy}} 垂直精度{{horizontalAccuracy}}
+    </l-tag>
 
-  <text class="radio">是否显示在地图上（不显示在生成的绿地图上，点击：什么是绿地图）</text>
-  <l-radio-group current="{{onMap}}" placement="row">
-    <l-radio key="1">是</l-radio>
-    <l-radio key="0">否</l-radio>
-  </l-radio-group>
+  <view class="radio">
+    <text class="title">是否显示在地图上（不显示在生成的绿地图上，点击：什么是绿地图）</text>
+    <l-radio-group current="{{onMap}}" placement="row" l-class="options">
+      <l-radio key="1">是</l-radio>
+      <l-radio key="0">否</l-radio>
+    </l-radio-group>
+  </view>
 
-  <text class="radio">是否公开（不公开无法搜索到，但是仍可通过分享链接直接访问）</text>
-  <l-radio-group current="{{isPubilc}}" placement="row">
-    <l-radio key="1">是</l-radio>
-    <l-radio key="0">否</l-radio>
-  </l-radio-group>
+  <view class="radio">
+    <text class="title">是否公开（不公开无法搜索到，但是仍可通过分享链接直接访问）</text>
+    <l-radio-group current="{{isPubilc}}" placement="row" l-class="options">
+      <l-radio key="1">是</l-radio>
+      <l-radio key="0">否</l-radio>
+    </l-radio-group>
+  </view>
 
   <l-textarea 
     value="{{content}}"

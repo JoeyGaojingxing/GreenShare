@@ -1,5 +1,1 @@
-/* pages/user/user.wxss */
-.header {
-    display: inline-flex;
-    flex-direction: row;
-}
+.grid{margin:30rpx}.grid-item .record{background-color:#ffffff;color:#333}.grid-item .button{margin:10rpx}

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    login: false,
   },
 
   /**
@@ -69,8 +69,16 @@ Page({
     // cloudID encryptedData iv rawData signature userInfo
     console.log(res.detail.userInfo)
     console.log(res)
-    if (userInfo === undefined) {
-      wx.navigateBack()
+    if (userInfo != undefined) {
+      wx.navigateTo({
+        url: '/pages/userinfo/userinfo',
+        success: function (res) {
+          console.log(res)
+        },
+        fail: function (  ) {
+          
+        }
+      })
     }
   },
 

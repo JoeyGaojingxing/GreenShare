@@ -11,21 +11,14 @@ mask="{{currentConf.mask}}"
 l-image-class="img" />
 
 <!-- 个人信息 我的发布 我喜欢的 喜欢我的数量 我关注的人 关注我的人 客服 反馈 关于我们 用户协议 -->
-<navigator 
-    url="/pages/userinfo/userinfo" 
-    hover-class="navigator-hover"
-    hover-start-time="0"
-    hover-stay-time="80"
-    bindfail="" >
-    <l-card 
-        l-class="header"
-        type="primary"
-        plaintext="{{true}}" >
-        <l-avatar l-class="avatar" open-data="{{['userAvatarUrl', 'userNickName']}}" />
-        <l-icon name="edit" />
-        <button open-type="getUserInfo" bind:getuserinfo="getUserInfo">asdf</button>
-    </l-card>
-</navigator>
+<l-card 
+    l-class="card"
+    type="primary"
+    plaintext="{{true}}" >
+    <l-avatar l-class="avatar" wx:if="{{login}}" l-class="avatar" open-data="{{['userAvatarUrl', 'userNickName']}}" />
+    <l-icon l-class="icon" wx:if="{{login}}" name="edit" />
+    <button l-class="button" wx:if="{{!login}}" open-type="getUserInfo" bind:getuserinfo="getUserInfo">登录</button>
+</l-card>
 
 <l-grid
     bind:lintap="onTapGrid"
@@ -38,47 +31,47 @@ l-image-class="img" />
 
     <l-grid-item key="records" slot="records">
         <view >333</view>
-        <l-button>我的记录数</l-button> 
+        <l-button l-class="record">我的记录数</l-button> 
     </l-grid-item>
 
     <l-grid-item key="length" slot="length">
         <view >666 m</view>
-        <l-button>我走的路</l-button>
+        <l-button l-class="record">我走的路</l-button>
     </l-grid-item>
 
     <l-grid-item key="liked" slot="liked">
         <view >999</view>
-        <l-button>收到的赞</l-button>
+        <l-button l-class="record">收到的赞</l-button>
     </l-grid-item>
     
     <l-grid-item key="contents" slot="contents">
         <l-icon name="order" />
-        <l-button>我的发布</l-button> 
+        <l-button l-class="button">我的发布</l-button> 
     </l-grid-item>
 
     <l-grid-item key="watch" slot="watch">
         <l-icon name="order" />
-        <l-button>我关注的</l-button>
+        <l-button l-class="button">我关注的</l-button>
     </l-grid-item>
 
     <l-grid-item key="watched" slot="watched">
         <l-icon name="order" />
-        <l-button>我的粉丝</l-button>
+        <l-button l-class="button">我的粉丝</l-button>
     </l-grid-item>
 
     <l-grid-item key="contact" slot="contact">
         <l-icon name="order" />
-        <l-button open-type="contact">联系客服</l-button>
+        <l-button l-class="button" open-type="contact">联系客服</l-button>
     </l-grid-item>
 
     <l-grid-item key="callback" slot="callback">
         <l-icon name="order" />
-        <l-button open-type="feedback">问题反馈</l-button>
+        <l-button l-class="button" open-type="feedback">问题反馈</l-button>
     </l-grid-item>
 
     <l-grid-item key="about" slot="about">
         <l-icon name="order" />
-        <l-button>关于我们</l-button>
+        <l-button l-class="button">关于我们</l-button>
     </l-grid-item>
 
 </l-grid>

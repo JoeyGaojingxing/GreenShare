@@ -103,5 +103,8 @@ Page({
 
   onTapContent: function () {
     console.log('onTapContent')
+    wx.navigateTo({
+      url: '/pages/content/content?mode=marker'
+    })
   }
 })

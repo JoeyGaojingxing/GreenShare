@@ -14,6 +14,7 @@ Page({
     verticalAccuracy: "",
     horizontalAccuracy: "",
     showPop: false,
+    showPopLogin: false,
     markers: [],
   },
 
@@ -29,6 +30,12 @@ Page({
    */
   onReady: function () {
     const _this = this
+    const app = getApp()
+    if (!app.globalData.login) {
+      _this.setData({
+        showPopLogin: true,
+      })
+    }
     wx.getSetting({
       success(res) {
         if (!res.authSetting['scope.userLocation']) {
@@ -58,8 +65,10 @@ Page({
     wx.getSetting({
       success(res) {
         console.log("userInfo", res)
-        if (!res.authSetting['scope.userInfo']) {
-          
+        if (res.authSetting['scope.userInfo']) {
+          _this.setData({
+            showPopLogin: false,
+          })
         }
 
         if (!res.authSetting['scope.userLocation']) {
@@ -215,4 +224,19 @@ Page({
       },
     })
   },
+
+  onTapLogin (res) {
+    const _this = this
+    const userInfo = res.detail.authSetting["scope.userInfo"]
+    if (userInfo===true) {
+      console.log(userInfo)
+      const app = getApp()
+      app.globalData.login = true
+      _this.setData({
+        showPopLogin: false,
+      })
+    }
+  }
+
+
 })

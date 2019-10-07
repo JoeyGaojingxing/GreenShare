@@ -81,10 +81,21 @@
     show="{{showPop}}"
     animation="show"
     content-align="center"
-    z-index="99"
+    z-index="98"
     locked="{{true}}" >
     如果要使用此功能，请允许 “使用我的地理位置”
     <l-button bind:opensetting="onTapOpen" open-type="openSetting" >打开权限</l-button>
+    <l-button bind:lintap	="onTapCancel" >取消</l-button>
+  </l-popup>
+
+  <l-popup 
+    show="{{showPopLogin}}"
+    animation="show"
+    content-align="center"
+    z-index="99"
+    locked="{{true}}" >
+    如果要使用此功能，请先登录
+    <l-button bind:opensetting="onTapLogin" open-type="getUserInfo" >登录</l-button>
     <l-button bind:lintap	="onTapCancel" >取消</l-button>
   </l-popup>
 </view>

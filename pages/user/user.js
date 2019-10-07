@@ -12,7 +12,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const _this = this
+    const app = getApp()
     
+    // 查看是否授权获取userInfo
+    wx.getSetting({
+      success (res){
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          app.globalData.login = true
+          _this.setData({
+            login: true,
+          })
+          wx.getUserInfo({
+            success: function(res) {
+              console.log(res.userInfo, app.globalData)
+            }
+          })
+        }
+      }
+    })
   },
 
   /**
@@ -70,15 +89,20 @@ Page({
     console.log(res.detail.userInfo)
     console.log(res)
     if (userInfo != undefined) {
-      wx.navigateTo({
-        url: '/pages/userinfo/userinfo',
-        success: function (res) {
-          console.log(res)
-        },
-        fail: function (  ) {
-          
-        }
+      this.setData({
+        login: true,
       })
+      const app = getApp()
+      app.globalData.login = true
+      // wx.navigateTo({
+      //   url: '/pages/userinfo/userinfo',
+      //   success: function (res) {
+      //     console.log(res)
+      //   },
+      //   fail: function (  ) {
+          
+      //   }
+      // })
     }
   },
 

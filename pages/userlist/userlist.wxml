@@ -1,7 +1,12 @@
 <!--pages/userlist/userlist.wxml-->
-<l-avatar open-data="{{['userAvatarUrl', 'userNickName']}}" />
+<view class="root">
+    <l-avatar 
+    class="avatar" 
+    open-data="{{['userAvatarUrl', 'userNickName']}}" />
 
-<l-avatar
-    size='120'
-    src="/static/demo.jpg"
-    text="mojerro" />
+    <l-avatar
+        class="avatar"
+        size='120'
+        src="/static/demo.jpg"
+        text="mojerro" />
+</view>

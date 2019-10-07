@@ -1,1 +1,1 @@
-/* pages/userlist/userlist.wxss */
+.root{display:flex;flex-direction:column;padding:30rpx 80rpx}.root .avatar{margin-bottom:30rpx;padding-bottom:30rpx;border-bottom:1px solid #dddddd}

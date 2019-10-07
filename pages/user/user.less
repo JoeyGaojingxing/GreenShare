@@ -1,23 +1,56 @@
-.card {
-    .avatar {}
+.root {
+    background: #eeeeee;
+    padding-top: 12rpx;
+    display: flex;
+    flex-direction: column;
+    min-height: 99vh;
 
-    .icon {}
+    .card {
+        padding: 48rpx 0;
+        min-height: 250rpx;
+        
+        .content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
 
-    .button {}
-}
+        .avatar {
+            max-width: 300rpx;
+        }
 
-.grid {
-    margin: 30rpx;
-}
+        .icon {
+            display: flex;
+        }
 
-.grid-item {
-
-    .record {
-        background-color: #ffffff;
-        color: #333;
+        .button {
+            background-color: #33ee33;
+        }
     }
 
-    .button {
-        margin: 10rpx;
+    .grid {
+        margin: 30rpx;
+    }
+
+    .grid-item {
+        padding: 24rpx 0;
+
+        .number {
+            color: #ee3333;
+            font-style: italic;
+            font-weight: 500;
+            font-size: 36rpx;
+            line-height: 50rpx;
+        }
+
+        .record {
+            background-color: #eeeeee;
+            color: #333;
+        }
+
+        .button {
+            margin: 10rpx;
+        }
     }
 }

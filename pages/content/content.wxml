@@ -2,17 +2,19 @@
 <import src="marker/index.wxml"></import>
 <import src="track/index.wxml"></import>
 
-<block wx:if="{{mode === 'marker'}}">
-    <template is="marker" data="{{...item}}"></template>
-</block>
+<view class="root">
+    <block wx:if="{{mode === 'marker'}}">
+        <template is="marker" data="{{...item}}"></template>
+    </block>
 
-<block wx:elif="{{mode === 'track'}}">
-    <template is="track" data="{{...item}}"></template>
-</block>
+    <block wx:elif="{{mode === 'track'}}">
+        <template is="track" data="{{...item}}"></template>
+    </block>
 
-<block wx:else> 
-    there is something wrong
-</block>
+    <block wx:else> 
+        there is something wrong
+    </block>
 
-<block class="home">
-</block>
+    <block class="home">
+    </block>
+</view>

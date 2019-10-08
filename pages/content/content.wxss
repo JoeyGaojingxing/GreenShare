@@ -1,1 +1,1 @@
-/* pages/content/content.wxss */
+.root{display:flex;flex-direction:column;padding:30rpx 50rpx;align-items:stretch}.root .card{margin-bottom:60rpx}.root .title{margin:20rpx auto;font-size:40rpx;font-weight:400}.root .image{margin:20rpx auto}.root .content{padding:20rpx}.root .map{max-width:600rpx;max-height:400rpx}.root .info{margin:20rpx}

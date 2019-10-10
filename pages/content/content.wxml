@@ -3,18 +3,32 @@
 <import src="track/index.wxml"></import>
 
 <view class="root">
-    <block wx:if="{{mode === 'marker'}}">
-        <template is="marker" data="{{...item}}"></template>
-    </block>
+    <!-- user(logo id favourite level isValid) share title image tag content position 评论 -->
+    <l-card type="avatar" l-class="card" image="/static/me.jpg" title="七月在夏天" describe="这里是个性签名">
+        <!-- 此处为content -->
+        <view class="avter-share-container">
+            <view class="like-container">
+                <l-icon name="like" color="#666" size="28" />
+                <view class="number">160喜欢</view>
+            </view>
+            <view class="like-container">
+                <l-icon name="share" color="#666" size="28" />
+                <view class="number">分享</view>
+            </view>
+        </view>
+        <l-tag shape="circle" bg-color="#f3f3f3" font-color="#3963BC" slot="more" size="large">
+            + 关注
+        </l-tag>
+    </l-card>
+    <view class="title">title</view>
+    <image class="image" src="/static/group.jpg" style="width: 200px; height: 200px; background-color: #eeeeee;" mode="scaleToFill" show-menu-by-longpress binderror="" bindload="" />
+    <!-- <l-tag>tag</l-tag> -->
+    <view class="content">很简单，豆瓣现在这样就给大家指了一条明路:以后凡是这种国产的风口浪尖的的片子，会涉及到各方背后利益关系的片子...</view>
+    <map id="map" scale="14" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" bindtap="onTapMap" enable-satellite="{{false}}" show-location show-compass show-scale style="width: 100%; height: 300px;" class="map" />
+    <l-tag class="info" size="large" type="reading" plain="{{true}}">
+        经度{{longitude}} 维度{{latitude}} 海拔{{altitude}} 
+        速度{{speed}} 精度{{accuracy}} 
+        水平精度{{verticalAccuracy}} 垂直精度{{horizontalAccuracy}}
+    </l-tag>
 
-    <block wx:elif="{{mode === 'track'}}">
-        <template is="track" data="{{...item}}"></template>
-    </block>
-
-    <block wx:else> 
-        there is something wrong
-    </block>
-
-    <block class="home">
-    </block>
 </view>

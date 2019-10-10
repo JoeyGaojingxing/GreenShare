@@ -17,10 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // options.mode indicates the content of this page, 
-    // it can be 'track' or 'marker'
-    console.log(options)
-    this.setData({mode: options.mode})
+
   },
 
   /**

@@ -1,6 +1,6 @@
 <!--pages/logs/logs.wxml-->
 <navigator 
-    url="/pages/content/content?mode=marker" 
+    url="/pages/content/content" 
     hover-class="navigator-hover"
     hover-start-time="0"
     hover-stay-time="80"
@@ -18,7 +18,7 @@
 </navigator>
 
 <navigator 
-    url="/pages/content/content?mode=track" 
+    url="/pages/content/content" 
     hover-class="navigator-hover"
     hover-start-time="0"
     hover-stay-time="80"

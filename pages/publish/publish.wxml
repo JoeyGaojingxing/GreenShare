@@ -2,7 +2,8 @@
 <view class='root'>
   <l-image-picker 
     temp-file-paths="{{image}}" 
-    count="1" 
+    count="9" 
+    size="3"
     source-type="camera" 
     l-class="image-picker" 
     bind:linchange="onChangeImage" 

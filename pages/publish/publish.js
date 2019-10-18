@@ -30,14 +30,24 @@ Page({
    */
   onReady: function () {
     const _this = this
-    const app = getApp()
-    if (!app.globalData.login) {
-      _this.setData({
-        showPopLogin: true,
-      })
-    }
+
     wx.getSetting({
       success(res) {
+        if (!res.authSetting['scope.getUserInfo']) {
+          // getUserInfo 判断用户是否登录
+          wx.getUserInfo({
+            success (res) {
+
+            },
+            fail () {
+              _this.setData({
+                showPopLogin: true,
+              })
+            }
+          })
+          
+        }
+
         if (!res.authSetting['scope.userLocation']) {
           wx.authorize({
             scope: 'scope.userLocation',
@@ -227,16 +237,12 @@ Page({
 
   onTapLogin (res) {
     const _this = this
-    const userInfo = res.detail.authSetting["scope.userInfo"]
-    if (userInfo===true) {
-      console.log(userInfo)
-      const app = getApp()
-      app.globalData.login = true
+    const userInfo = res
+    console.log(res)
+    if (res.detail.userInfo) {
       _this.setData({
         showPopLogin: false,
       })
     }
   }
-
-
 })

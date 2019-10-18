@@ -96,7 +96,7 @@
     z-index="99"
     locked="{{true}}" >
     如果要使用此功能，请先登录
-    <l-button bind:opensetting="onTapLogin" open-type="getUserInfo" >登录</l-button>
+    <l-button bind:getuserinfo="onTapLogin" open-type="getUserInfo" >登录</l-button>
     <l-button bind:lintap	="onTapCancel" >取消</l-button>
   </l-popup>
 </view>

@@ -16,7 +16,7 @@ Page({
   onLoad: async function (options) {
     const _this = this
     const app = getApp()
-    const res = await user.test()
+    const res = await user.getArticles()
     console.log(res, 'this is test')
     // 查看是否授权获取userInfo
     wx.getSetting({

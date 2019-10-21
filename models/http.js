@@ -1,4 +1,4 @@
-baseURL: 'http://nature-trail.finelyteam.com'
+const baseURL = 'http://nature-trail.finelyteam.com'
 
 export class http {
 
@@ -14,11 +14,12 @@ export class http {
         return app.globalData
     }
 
-    get(url, data = {}, success = null, fail = null, complete = null, responseType = 'text') {
+    get({url, data = {}, success = null, fail = null, complete = null, responseType = 'text'}) {
+        console.log(url, data, responseType)
         return wx.request({
             url: baseURL + url,
             data: data,
-            header,
+            header: this.header,
             method: "GET",
             dataType: "json",
             responseType,

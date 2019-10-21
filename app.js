@@ -24,6 +24,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    login: false
+    login: false,
+    access_token: null
   }
 })

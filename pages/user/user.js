@@ -1,4 +1,6 @@
 // pages/user/user.js
+import user from '../../models/user'
+
 Page({
 
   /**
@@ -11,10 +13,11 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: async function (options) {
     const _this = this
     const app = getApp()
-    
+    const res = await user.test()
+    console.log(res, 'this is test')
     // 查看是否授权获取userInfo
     wx.getSetting({
       success (res){
@@ -26,12 +29,13 @@ Page({
           })
           wx.getUserInfo({
             success: function(res) {
-              console.log(res.userInfo, app.globalData)
+             // TODO
             }
           })
         }
       }
     })
+    console.log(app.globalData, ':globalData')
   },
 
   /**
@@ -94,15 +98,7 @@ Page({
       })
       const app = getApp()
       app.globalData.login = true
-      // wx.navigateTo({
-      //   url: '/pages/userinfo/userinfo',
-      //   success: function (res) {
-      //     console.log(res)
-      //   },
-      //   fail: function (  ) {
-          
-      //   }
-      // })
+      app.globalData.userInfo = userInfo
     }
   },
 

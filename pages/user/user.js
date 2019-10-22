@@ -1,5 +1,5 @@
 // pages/user/user.js
-import user from '../../models/user'
+import article from '../../models/article'
 
 Page({
 
@@ -16,7 +16,7 @@ Page({
   onLoad: async function (options) {
     const _this = this
     const app = getApp()
-    const res = await user.getArticles()
+    const res = await article.getArticles()
     console.log(res, 'this is test')
     // 查看是否授权获取userInfo
     wx.getSetting({

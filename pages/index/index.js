@@ -66,7 +66,6 @@ Page({
 
   getArticles: function (city) {
     const _this = this
-    const urlList = require('../../utils/url.js');
     // 获取文章列表
     const object = {
       //TODO(mojerro):

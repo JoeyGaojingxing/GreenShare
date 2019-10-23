@@ -16,7 +16,7 @@ Page({
   onLoad: async function (options) {
     const _this = this
     const app = getApp()
-    const res = await article.getArticles()
+    const res = await article.getArticles({success: (res) => {console.log(res, '这是一个外部调用')}})
     console.log(res, 'this is test')
     // 查看是否授权获取userInfo
     wx.getSetting({

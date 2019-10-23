@@ -1,3 +1,4 @@
+// TODO: 代码审阅
 const baseURL = 'http://nature-trail.finelyteam.com'
 
 export class http {
@@ -9,17 +10,23 @@ export class http {
         }
     }
 
-    async test() {
-        const app = await getApp()
-        return app.globalData
-    }
-
-    get({url, data = {}, success = null, fail = null, complete = null, responseType = 'text'}) {
+    get({
+        url,
+        data = {},
+        header = {},
+        success = null,
+        fail = null,
+        complete = null,
+        responseType = 'text'
+    }) {
         console.log(url, data, responseType)
         return wx.request({
             url: baseURL + url,
             data: data,
-            header: this.header,
+            header: {
+                ...this.header,
+                ...header
+            },
             method: "GET",
             dataType: "json",
             responseType,
@@ -28,12 +35,23 @@ export class http {
             complete
         })
     }
-    
-    put(url, data = {}, success = null, fail = null, complete = null, responseType = 'text') {
+
+    put({
+        url,
+        data = {},
+        header = {},
+        success = null,
+        fail = null,
+        complete = null,
+        responseType = 'text'
+    }) {
         return wx.request({
             url: baseURL + url,
             data: data,
-            header,
+            header: {
+                ...this.header,
+                ...header
+            },
             method: "PUT",
             dataType: "json",
             responseType,
@@ -42,12 +60,23 @@ export class http {
             complete
         })
     }
-    
-    post(url, data = {}, success = null, fail = null, complete = null, responseType = 'text') {
+
+    post({
+        url,
+        data = {},
+        header = {},
+        success = null,
+        fail = null,
+        complete = null,
+        responseType = 'text'
+    }) {
         return wx.request({
             url: baseURL + url,
             data: data,
-            header,
+            header: {
+                ...this.header,
+                ...header
+            },
             method: "POST",
             dataType: "json",
             responseType,
@@ -56,12 +85,23 @@ export class http {
             complete
         })
     }
-    
-    delete_(url, data = {}, success = null, fail = null, complete = null, responseType = 'text') {
+
+    delete_({
+        url,
+        data = {},
+        header = {},
+        success = null,
+        fail = null,
+        complete = null,
+        responseType = 'text'
+    }) {
         return wx.request({
             url: baseURL + url,
             data: data,
-            header,
+            header: {
+                ...this.header,
+                ...header
+            },
             method: "DELETE",
             dataType: "json",
             responseType,
@@ -70,22 +110,42 @@ export class http {
             complete
         })
     }
-    
-    download(url, filePath, success = null, fail = null, complete = null) {
+
+    download({
+        url,
+        filePath,
+        header = {},
+        success = null,
+        fail = null,
+        complete = null
+    }) {
         return wx.downloadFile({
             url: baseURL + url,
-            header,
+            header: {
+                ...this.header,
+                ...header
+            },
             filePath,
             success,
             fail,
             complete
         })
     }
-    
-    upload(url, filePath, success = null, fail = null, complete = null) {
+
+    upload({
+        url,
+        filePath,
+        header = {},
+        success = null,
+        fail = null,
+        complete = null
+    }) {
         return wx.uploadFile({
             url: baseURL + url,
-            header,
+            header: {
+                ...this.header,
+                ...header
+            },
             filePath,
             name,
             formData,

@@ -1,4 +1,6 @@
 //app.js
+import user from './models/user'
+
 App({
   onLaunch: function (res) {
     const _this = this
@@ -13,11 +15,26 @@ App({
     })
     console.log('showShareMenu', res)
 
-    // 登录
+    // 使用小程序自动登录并查看是否已注册
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log("login", res)
+        user.wechatLogin({
+          code: res.code,
+          success: (res) => {
+            if ( res.data.access_token ) {
+              // 已经注册过，自动登录并返回 access_token
+              _this.globalData.login = true
+              _this.globalData.access_token = res.data.access_token
+            } else {
+              // 未注册
+            }
+            console.log('成功', res)
+          },
+          fail: () => {
+            console.log('失败')
+          }
+        })
       }
     })
 

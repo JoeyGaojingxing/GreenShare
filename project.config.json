@@ -51,7 +51,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 1,
 			"list": [
 				{
 					"id": 0,
@@ -62,9 +62,9 @@
 				},
 				{
 					"id": 1,
-					"name": "二级页面 记录",
-					"pathName": "pages/logs/logs",
-					"query": "",
+					"name": "二级页面-记录",
+					"pathName": "pages/records/records",
+					"query": "nickname=mojerro",
 					"scene": null
 				},
 				{
@@ -92,7 +92,7 @@
 					"id": 5,
 					"name": "二级页面 图片内容",
 					"pathName": "pages/content/content",
-					"query": "mode=marker",
+					"query": "aid=1",
 					"scene": 1044,
 					"shareInfo": {
 						"groupName": "测试模拟群0",
@@ -102,9 +102,16 @@
 				},
 				{
 					"id": 6,
-					"name": "二级页面-用户列表",
+					"name": "二级-用户列表-粉丝列表",
 					"pathName": "pages/userlist/userlist",
-					"query": "",
+					"query": "mode=fans",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "二级-用户列表-关注用户",
+					"pathName": "pages/userlist/userlist",
+					"query": "mode=follow",
 					"scene": null
 				}
 			]

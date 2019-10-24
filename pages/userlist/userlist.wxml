@@ -1,12 +1,11 @@
 <!--pages/userlist/userlist.wxml-->
 <view class="root">
-    <l-avatar 
-    class="avatar" 
-    open-data="{{['userAvatarUrl', 'userNickName']}}" />
-
-    <l-avatar
-        class="avatar"
-        size='120'
-        src="/static/demo.jpg"
-        text="mojerro" />
+    <view class="avatar" wx:for="{{users}}">
+        <l-avatar
+            size='120'
+            src="{{item.avatar}}"
+            text="{{item.nickname}}" />
+ 
+        <view >{{item.signature}}</view>
+    </view>
 </view>

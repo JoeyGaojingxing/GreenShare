@@ -9,34 +9,44 @@
     l-cancel-class='cancel'
     l-placeholder-class='placeholder' />
 
-<view wx:for="{{articles}}" class="contents">
+<view >
     <l-card 
-        type="avatar" 
-        l-class="card" 
+        wx:for="{{articles}}"
+        wx:key="*this"
+        id="{{item.id}}"
+        class="contents"
+        type="avatar"
+        l-class="card"
         l-img-class="card-img"
         l-title-class="card-title"
-        image="/static/demo.jpg" 
-        title="七月在夏天" 
-        describe="18个小时前">
+        image="{{item.avatar}}"
+        title="{{item.nickname}}"
+        describe="{{item.date}}">
         <!-- 此处为content -->
-        <view class="content" bind:tap='onTapContent'>
-        很简单，豆瓣现在这样就给大家指了一条明路:以后凡是这种国产的风口浪尖的的片子，会涉及到各方背后利益关系的片子...
+        <view class="content" id="{{item.id}}" bind:tap='onTapContent'>
+            <image class="image" src="{{item.image}}" />
+            <view class="title">
+            {{item.title}}
+            </view>
         </view>
+
+        <!-- 操作按钮 -->
         <view class="info">
-            <view class="like" bind:tap="onTapLike">
+            <view id="{{item.id}}" class="like" bind:tap="onTapLike">
                 <l-icon name="like" color="#666" size="28" l-class="icon" />
-                <view class="number">160喜欢</view>
+                <view class="number">{{item.like}}喜欢</view>
             </view>
-            <view class="like" bind:tap="onTapComment">
+            <view id="{{item.id}}" class="like" bind:tap="onTapComment">
                 <l-icon name="comment" color="#666" size="28" l-class="icon" />
-                <view class="number">10评论</view>
+                <view class="number">{{item.comment}}评论</view>
             </view>
-            <view class="like" bind:tap="onTapShare">
+            <view id="{{item.id}}" class="like" bind:tap="onTapShare">
                 <l-icon name="share" color="#666" size="28" l-class="icon" />
                 <view class="number">分享</view>
             </view>
         </view>
-        <l-tag 
+        <l-tag
+            id="{{item.id}}"
             shape="circle" 
             bg-color="#f3f3f3" 
             font-color="#3963BC" 

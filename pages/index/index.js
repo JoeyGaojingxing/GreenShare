@@ -1,11 +1,40 @@
 // pages/index/index.js
+import article from '../../models/article'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    articles: [1, 2, 3],
+    articles: [{
+      "title": "这里是标题",
+      "image": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLLb5faWpF2MUUFXJoBTLp3BnppVYFDFw6WxAdOQRBLAzbTT05meAOlICE4SGOoAQentiaSZtQTqtA/132",
+      "like": 130,
+      "comment": 140,
+      "date": "2019-1-10",
+      "avatar": "/static/demo.jpg",
+      "id": 1,
+      "nickname": "mojerro"
+    },{
+      "title": "这里是标题",
+      "image": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLLb5faWpF2MUUFXJoBTLp3BnppVYFDFw6WxAdOQRBLAzbTT05meAOlICE4SGOoAQentiaSZtQTqtA/132",
+      "like": 110,
+      "comment": 120,
+      "date": "2019-1-10",
+      "avatar": "/static/demo.jpg",
+      "id": 2,
+      "nickname": "mojerro"
+    },{
+      "title": "这里是标题",
+      "image": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLLb5faWpF2MUUFXJoBTLp3BnppVYFDFw6WxAdOQRBLAzbTT05meAOlICE4SGOoAQentiaSZtQTqtA/132",
+      "like": 150,
+      "comment": 160,
+      "date": "2019-1-10",
+      "avatar": "/static/demo.jpg",
+      "id": 3,
+      "nickname": "mojerro"
+    }],
   },
 
   /**
@@ -13,7 +42,7 @@ Page({
    */
   onLoad: function (options) {
     // TODO
-    this.getArticles('Beijing')
+    // this.getArticles('Beijing')
   },
 
   /**
@@ -66,42 +95,36 @@ Page({
   },
 
   getArticles: function (city) {
-    const _this = this
-    // 获取文章列表
-    const object = {
-      //TODO(mojerro):
-      data: { city },
+    const that = this
+
+    article.getArticles({
+      city: 'Beijing',
+      start: 0,
       success: res => {
-        const data = res.data
-        const statusCode = res.statusCode
-        const header = res.header
-
-        _this.setData({
-          articles: data
+        that.setData({
+          articles: res.data
         })
-      },
-      fail: () => {}
-    }
-    wx.request({object})
+      }
+    })
   },
 
-  onTapLike: function () {
+  onTapLike: function (aid) {
     
   },
 
-  onTapComment: function () {
+  onTapComment: function (aid) {
 
   },
 
-  onTapShare: function () {
-    
+  onTapShare: function (aid) {
+    console.log(aid, '---------------------------------\n')
   },
 
-  onTapFollow: function () {
+  onTapFollow: function (aid) {
     console.log("onTapFollow")
   },
 
-  onTapContent: function () {
+  onTapContent: function (aid) {
     console.log('onTapContent')
     wx.navigateTo({
       url: '/pages/content/content?mode=marker'

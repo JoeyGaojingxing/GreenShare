@@ -19,7 +19,7 @@
             <l-avatar l-class="avatar" l-class="avatar" open-data="{{['userAvatarUrl', 'userNickName']}}" />
             <l-icon l-class="icon" name="edit" />
         </view>
-        <button class="button" wx:if="{{!login}}" open-type="getUserInfo" bind:getuserinfo="getUserInfo">登录</button>
+        <button class="button" wx:if="{{!login}}" open-type="getUserInfo" bind:getuserinfo="onTapLogin">登录</button>
     </l-card>
 
     <l-grid
@@ -32,17 +32,17 @@
         show-col-border="true" >
 
         <l-grid-item key="records" slot="records">
-            <view class="number">333</view>
+            <view class="number">{{records}} 条</view>
             <l-button l-class="record">我的记录数</l-button> 
         </l-grid-item>
 
         <l-grid-item key="length" slot="length">
-            <view class="number">666 m</view>
+            <view class="number">{{length}} 米</view>
             <l-button l-class="record">我走的路</l-button>
         </l-grid-item>
 
         <l-grid-item key="liked" slot="liked">
-            <view class="number">999</view>
+            <view class="number">{{likes}} 个</view>
             <l-button l-class="record">收到的赞</l-button>
         </l-grid-item>
         

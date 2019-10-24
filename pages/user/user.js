@@ -1,5 +1,5 @@
 // pages/user/user.js
-import article from '../../models/article'
+import user from '../../models/user'
 
 Page({
 
@@ -8,34 +8,16 @@ Page({
    */
   data: {
     login: false,
+    records: 333,
+    length: 666,
+    likes: 999,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: async function (options) {
-    const _this = this
-    const app = getApp()
-    const res = await article.getArticles({success: (res) => {console.log(res, '这是一个外部调用')}})
-    console.log(res, 'this is test')
-    // 查看是否授权获取userInfo
-    wx.getSetting({
-      success (res){
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          app.globalData.login = true
-          _this.setData({
-            login: true,
-          })
-          wx.getUserInfo({
-            success: function(res) {
-             // TODO
-            }
-          })
-        }
-      }
-    })
-    console.log(app.globalData, ':globalData')
+
   },
 
   /**
@@ -49,7 +31,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    const _this = this
+    const app = getApp()
 
+    // 设页面登录状态
+    _this.setData({
+      login: app.globalData.login,
+    })
   },
 
   /**
@@ -87,14 +75,35 @@ Page({
 
   },
 
-  getUserInfo (res) {
+  onTapLogin (res) {
     const userInfo = res.detail.userInfo
     // cloudID encryptedData iv rawData signature userInfo
-    console.log(res.detail.userInfo)
-    console.log(res)
+
     if (userInfo != undefined) {
-      this.setData({
-        login: true,
+      // 获取到了 userInfo，之后获取 code
+      wx.login({
+        success: res => {
+          // 发送 res.code 和 userInfo 进行注册
+          user.wechatLogin({
+            code: res.code,
+            data: userInfo,
+            success: res => {
+              if (res.data.access_token) {
+                // 注册成功
+                this.setData({
+                  login: true,
+                })
+                app.globalData.login = true
+                app.globalData.access_token = res.data.access_token
+              } else {
+                // 未注册
+              }
+            },
+            fail: () => {
+              console.log('失败')
+            }
+          })
+        }
       })
       const app = getApp()
       app.globalData.login = true
@@ -152,7 +161,15 @@ Page({
       })
     }  else {
       // 其他
-    } 
+    }
+  },
+
+  getUserInfo() {
+    user.getDetail({
+      success: res => {
+        // 获取用户数据
+      }
+    })
   }
 
 })

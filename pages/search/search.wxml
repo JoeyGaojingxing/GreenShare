@@ -1,2 +1,0 @@
-<!--pages/search/search.wxml-->
-<l-search-bar placeholder="搜索" show-cancel="{{true}}" shape="circle" />

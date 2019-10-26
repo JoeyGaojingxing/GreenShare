@@ -51,7 +51,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 7,
 			"list": [
 				{
 					"id": 0,
@@ -105,6 +105,13 @@
 					"name": "二级-用户列表-关注用户",
 					"pathName": "pages/userlist/userlist",
 					"query": "mode=follow",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "二级页面-用户详情",
+					"pathName": "pages/userinfo/userinfo",
+					"query": "user_id=1",
 					"scene": null
 				}
 			]

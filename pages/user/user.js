@@ -170,6 +170,10 @@ Page({
         // 获取用户数据
       }
     })
+  },
+
+  onTapEdit() {
+    wx.navigateTo({url: '../userinfo/userinfo'})
   }
 
 })

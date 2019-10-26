@@ -17,7 +17,7 @@
         plaintext="{{true}}" >
         <view wx:if="{{login}}" class="content">
             <l-avatar l-class="avatar" l-class="avatar" open-data="{{['userAvatarUrl', 'userNickName']}}" />
-            <l-icon l-class="icon" name="edit" />
+            <l-icon l-class="icon" name="edit" bind:tap="onTapEdit"/>
         </view>
         <button class="button" wx:if="{{!login}}" open-type="getUserInfo" bind:getuserinfo="onTapLogin">登录</button>
     </l-card>
